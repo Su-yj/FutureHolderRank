@@ -103,19 +103,19 @@ python shfe.py
 ```json
 {
     "_id" : ObjectId("5cc079f48233d1f7318495e7"),
-    "exchange" : "shfe", \\ 交易所
-    "goods" : "rb", \\ 品种代码
-    "symbol" : "shfe_rb1910", \\ 交易所合约代码，均使用该格式(exchange_symbol)，并且都是小写
-    "date" : ISODate("2019-04-24T00:00:00.000+0000"), \\ 时间
-    "volume" : 654596, \\ 当天统计的总量
-    "volumeDiff" : 12280, \\ 当天统计的变化量
-    \\ 排名信息
+    "exchange" : "shfe", // 交易所
+    "goods" : "rb", // 品种代码
+    "symbol" : "shfe_rb1910", // 交易所合约代码，均使用该格式(exchange_symbol)，并且都是小写
+    "date" : ISODate("2019-04-24T00:00:00.000+0000"), // 时间
+    "volume" : 654596, // 当天统计的总量
+    "volumeDiff" : 12280, // 当天统计的变化量
+    // 排名信息
     "data" : [
         {
-            "rank" : 1, \\ 排名
-            "name" : "银河期货", \\ 名称
-            "volume" : 75896, \\ 持仓量 或 持买单量 或 持卖单量 (具体根据表名区分)
-            "volumeDiff" : 15445 \\ 变化量
+            "rank" : 1, // 排名
+            "name" : "银河期货", // 名称
+            "volume" : 75896, // 持仓量 或 持买单量 或 持卖单量 (具体根据表名区分)
+            "volumeDiff" : 15445 // 变化量
         },
         {
             "rank" : 2,
