@@ -179,7 +179,7 @@ class ParseData(Thread):
             doc = {
                 'exchange': 'cffex',
                 'goods': goods,
-                'symbol': 'cffex_%s' % goods.lower(),
+                'symbol': 'cffex_%s' % contract.lower(),
                 'date': date,
                 'volume': volume,
                 'volumeDiff': volumeDiff,
