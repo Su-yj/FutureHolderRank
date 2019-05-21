@@ -215,14 +215,16 @@ class ParseData(Thread):
                 continue
             # 如果是总计并且有数据，则对数据进行整体处理
             if '总计' in item and temp_data:
-                df = pd.DataFrame(temp_data, columns=['rank', 'name', 'volume', 'volumeDiff'], dtype='int32')
+                df = pd.DataFrame(temp_data, columns=['rank', 'name', 'volume', 'volumeDiff'])
+                # 强制转换类型
+                df[['rank', 'volume', 'volumeDiff']] = df[['rank', 'volume', 'volumeDiff']].astype('int32')
                 data_dict = {
                     'exchange': 'dce',
                     'goods': goods,
                     'symbol': 'dce_%s' % contract.lower(),
                     'date': date,
-                    'volume': df['volume'].sum(),
-                    'volumeDiff': df['volumeDiff'].sum(),
+                    'volume': int(df['volume'].sum()),
+                    'volumeDiff': int(df['volumeDiff'].sum()),
                     'data': df.to_dict('record'),
                 }
                 if data_type == 'trade':

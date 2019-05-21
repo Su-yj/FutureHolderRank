@@ -6,9 +6,9 @@
 
 * 环境:
 
-1. 本项目基于python3开发，python2未经测试
-2. Linux 系统测试没问题，但Windows 系统在大商所插入数据到数据库时发生类型错误，目前具体原因未找到
-3. 使用Mongodb4.0数据库，其他版本Mongodb未测试
+1. 本项目基于 python3 开发，python2 未经测试
+2. Linux 和 Windows 环境下均能使用
+3. 使用 Mongodb4.0 数据库，其他版本 Mongodb 未测试
 
 * 下载代码:
 
