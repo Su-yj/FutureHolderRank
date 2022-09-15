@@ -129,13 +129,13 @@ class ParseData(Thread):
             except Empty:
                 pass
             except Exception as e:
-                log.logger.error('数据处理线程出错, 时间：%s，错误信息：%s' % (xml_dict['positionRank']['positionamt'][0]['tradingday'], e), exc_info=True)
+                log.logger.error('数据处理线程出错, 时间：%s，错误信息：%s' % (xml_dict['positionRank']['data'][0]['tradingday'], e), exc_info=True)
                 self.q.task_done()
     
     def parse_data(self, xml_dict):
         """处理数据"""
         # 时间
-        date = xml_dict['positionRank']['positionamt'][0]['tradingday']
+        date = xml_dict['positionRank']['data'][0]['tradingday']
         date = datetime.datetime.strptime(date, '%Y%m%d')
         # log.logger.debug('正在处理 %s' % date)
         # 数据
