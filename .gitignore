@@ -2,3 +2,5 @@ __pycache__
 logs/*
 *.pyc
 temp
+/venv/
+.idea

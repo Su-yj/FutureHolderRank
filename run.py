@@ -14,11 +14,12 @@ def main():
     start = time.time()
     log.logger.info('-'*50+' start '+'-'*50)
     log.logger.info('开始期货大户持仓爬虫程序')
-    process_list = []
-    process_list.append(multiprocessing.Process(target=cffex.main))
-    process_list.append(multiprocessing.Process(target=czce.main))
-    process_list.append(multiprocessing.Process(target=dce.main))
-    process_list.append(multiprocessing.Process(target=shfe.main))
+    process_list = [
+        multiprocessing.Process(target=cffex.main),
+        multiprocessing.Process(target=czce.main),
+        multiprocessing.Process(target=dce.main),
+        multiprocessing.Process(target=shfe.main),
+    ]
     for p in process_list:
         p.start()
     for p in process_list:

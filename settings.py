@@ -27,7 +27,8 @@ API = {
     'shfe': 'http://www.shfe.com.cn/data/dailydata/kx/pm%s.dat',
     # 郑州商品交易所
     # 网页地址: http://www.czce.com.cn/cn/jysj/ccpm/H770304index_1.htm
-    'czce': 'http://app.czce.com.cn/cms/cmsface/czce/newcms/calendarnewAll.jsp',
+    # 'czce': 'http://app.czce.com.cn/cms/cmsface/czce/newcms/calendarnewAll.jsp',
+    'czce': 'http://www.czce.com.cn/cn/DFSStaticFiles/Future/{year}/{date}/FutureDataHolding.htm',
     # 大连商品交易所
     # 网页地址: http://www.dce.com.cn/dalianshangpin/xqsj/tjsj26/rtj/rcjccpm/index.html
     'dce': 'http://www.dce.com.cn/publicweb/quotesdata/exportMemberDealPosiQuotesBatchData.html',

@@ -47,13 +47,14 @@ class CrawlData(Thread):
             if last_date.isoweekday() != 6 and last_date.isoweekday() != 7:
                 # 对form-data进行更新
                 pubDate = last_date.strftime('%Y-%m-%d')
-                self.form.update({'pubDate': pubDate})
+                # self.form.update({'pubDate': pubDate})
                 # 超时次数
                 time_out = 0
                 while time_out < self.retry:
                     try:
                         # log.logger.debug('正在爬取 %s' % pubDate)
-                        response = requests.post(self.url, data=self.form)
+                        # response = requests.post(self.url, data=self.form)
+                        response = requests.get(self.url.format(year=last_date.year, date=last_date.strftime('%Y%m%d')))
                         break
                     except Exception as e:
                         log.logger.warning('获取数据超时 %s, 错误: %s' % (pubDate, e))
@@ -98,7 +99,8 @@ class CrawlData(Thread):
             if data:
                 date_list.append(data['date'])
             else:
-                date_list.append(datetime.datetime(2005, 5, 9))
+                # date_list.append(datetime.datetime(2005, 5, 9))
+                date_list.append(datetime.datetime(2015, 10, 8))
         # 返回最小的那天
         return min(date_list)
 
